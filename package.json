@@ -10,7 +10,8 @@
     "test:ci": "ng test --no-watch --no-progress",
     "test:coverage": "ng test --configuration coverage",
     "lint": "ng lint",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "deploy:cloudflare": "ng build --configuration production --base-href / && npx wrangler deploy"
   },
   "engines": {
     "node": "24.x"

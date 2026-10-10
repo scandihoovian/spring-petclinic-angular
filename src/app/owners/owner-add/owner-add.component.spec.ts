@@ -35,7 +35,7 @@ import { By } from '@angular/platform-browser';
 import { OwnersRoutingModule } from '../owners-routing.module';
 import { OwnerListComponent } from '../owner-list/owner-list.component';
 
-class OwnserServiceStub {
+class OwnersServiceStub {
     addOwner(owner: Owner): Observable<Owner> {
         return of(owner);
     }
@@ -52,7 +52,7 @@ describe('OwnerAddComponent', () => {
             imports: [FormsModule],
             providers: [
                 provideRouter([]),
-                { provide: OwnerService, useClass: OwnserServiceStub },
+                { provide: OwnerService, useClass: OwnersServiceStub },
                 { provide: Router, useClass: RouterStub },
             ],
         }).compileComponents();

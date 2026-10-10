@@ -33,7 +33,7 @@
       <tbody>
       <tr *ngFor="let vet of vets">
         <td>
-          {{ vet.firstName }} {{ vet.lastName }}
+          {{ vet.firstName }}{{ vet.middleName ? ' ' + vet.middleName : '' }} {{ vet.lastName }}
         </td>
         <td>
           <div *ngFor="let spec of vet.specialties">

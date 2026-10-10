@@ -38,6 +38,7 @@ export class VetEditComponent implements OnInit {
   vetEditForm: FormGroup;
   idCtrl: FormControl;
   firstNameCtrl: FormControl;
+  middleNameCtrl: FormControl;
   lastNameCtrl: FormControl;
   specialtiesCtrl: FormControl;
   vet: Vet;
@@ -54,11 +55,13 @@ export class VetEditComponent implements OnInit {
   buildForm() {
 this.idCtrl = new FormControl(null);
     this.firstNameCtrl = new FormControl('', [Validators.required, Validators.minLength(2)]);
+    this.middleNameCtrl = new FormControl('');
     this.lastNameCtrl = new FormControl('', [Validators.required, Validators.minLength(2)]);
     this.specialtiesCtrl = new FormControl(null);
     this.vetEditForm = this.formBuilder.group({
       id: this.idCtrl,
       firstName: this.firstNameCtrl,
+      middleName: this.middleNameCtrl,
       lastName: this.lastNameCtrl,
       specialties: this.specialtiesCtrl
     });
@@ -71,6 +74,7 @@ this.idCtrl = new FormControl(null);
   initFormValues() {
     this.idCtrl.setValue(this.vet.id);
     this.firstNameCtrl.setValue(this.vet.firstName);
+    this.middleNameCtrl.setValue(this.vet.middleName ?? '');
     this.lastNameCtrl.setValue(this.vet.lastName);
     this.specialtiesCtrl.setValue(this.vet.specialties);
   }
